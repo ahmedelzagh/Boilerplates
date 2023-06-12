@@ -75,3 +75,16 @@ services:
       - 7359:7359/udp #optional
       - 1900:1900/udp #optional
     restart: unless-stopped
+  mstream:
+    image: linuxserver/mstream:latest
+    container_name: mstream
+    environment:
+      - PUID=1001
+      - PGID=999
+      - TZ=Africa/Cairo
+    volumes:
+      - /home/docker/docker/mstream/config:/config
+      - /home/docker/docker/media/music:/music
+    ports:
+      - 3006:3000
+    restart: unless-stopped
