@@ -1,0 +1,8 @@
+# Update packages
+sudo apt update && sudo apt upgrade -y
+
+# Install git and Ansible
+sudo apt install git ansible -y
+
+# Run Ansible-pull for desktop systems
+ansible-pull -U https://github.com/ahmedelzagh/ansible_desktop_tutorial.git
